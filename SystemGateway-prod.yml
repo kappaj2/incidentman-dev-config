@@ -1,5 +1,0 @@
-#   Configure the RestTemplate timeouts.
-application:
-    restTemplateConfig:
-        readTimeout: 450
-        connectTimeout: 550
