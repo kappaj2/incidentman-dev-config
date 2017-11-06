@@ -96,7 +96,13 @@ jhipster:
         title: JHipster Registry API
         description: JHipster Registry API documentation
         version: ${info.project.version}
-
+    security:
+        authentication:
+            jwt:
+                secret: incidentmanager-develop-secret
+# ===================================================================
+# JHipster Sample Spring Cloud Config.
+# ===================================================================
 
 # Property used on app startup to check the config server status
 configserver:
@@ -104,13 +110,13 @@ configserver:
     status: Connected to the IncidentManager Registry config server in central-config!
 
 # Default JWT secret token (to be changed in production!)
-jhipster:
-    security:
-        authentication:
-            jwt:
-                secret: incidentmanager-develop-secret
+#jhipster:
+#    security:
+#        authentication:
+#            jwt:
+#                secret: incidentmanager-develop-secret
 
 # Enable /management/logfile endpoint for all apps
-logging:
-    path: /tmp
-    file: ${spring.application.name}.log
+#logging:
+#    path: /tmp
+#    file: ${spring.application.name}.log
