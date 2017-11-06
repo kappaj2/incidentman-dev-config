@@ -63,53 +63,8 @@ security:
 # https://github.com/Netflix/eureka/blob/master/eureka-core/src/main/java/com/netflix/eureka/EurekaServerConfig.java
 # ===================================================================
 
-eureka:
-    instance:
-        appname: jhipster-registry
-        instanceId: jhipsterRegistry:${spring.application.instance_id:${random.value}}
-        prefer-ip-address: true
-        lease-renewal-interval-in-seconds: 5
-        lease-expiration-duration-in-seconds: 10
-        status-page-url-path: ${management.context-path}/info
-        health-check-url-path: ${management.context-path}/health
-        metadata-map:
-            profile: ${spring.profiles.active}
-            version: ${info.project.version}
-    client:
-        enabled: true
-        fetch-registry: false
-        register-with-eureka: false
-        instance-info-replication-interval-seconds: 10
-        registry-fetch-interval-seconds: 10
-        service-url:
-            defaultZone: http://admin:${security.user.password:admin}@localhost:${server.port}/eureka/
-    server:
-        # see discussion about enable-self-preservation:
-        # https://github.com/jhipster/generator-jhipster/issues/3654
-        enable-self-preservation: false
-    dashboard:
-        path: /registry
-
 jhipster:
-    swagger:
-        default-include-pattern: /(api|config)/.*
-        title: JHipster Registry API
-        description: JHipster Registry API documentation
-        version: ${info.project.version}
     security:
         authentication:
             jwt:
                 secret: incidentmanager-develop-secret
-# ===================================================================
-# JHipster Sample Spring Cloud Config.
-# ===================================================================
-
-# Property used on app startup to check the config server status
-configserver:
-    name: JHipster Registry config server
-    status: Connected to the IncidentManager Registry config server in ProfileConfig-dev(application.yml)!
-
-# Enable /management/logfile endpoint for all apps
-#logging:
-#    path: /tmp
-#    file: ${spring.application.name}.log
