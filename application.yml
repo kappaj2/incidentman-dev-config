@@ -1,3 +1,11 @@
+# ===================================================================
+# JHipster Registry starts up and read this name and allocate to itself.
+# All the other modules override this setting in the <module-name>-dev.yml file.
+# All module specific settings also goes into those configuration files.
+# This file's settings are overridden by the module-dev.yml file settings if present.
+# If no configuration in these two files, then it will look at the application-dev.yml and
+# then the application.yml files inside the module itself.
+# ===================================================================
 spring:
     application:
         name: jhipster-registry
